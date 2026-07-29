@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 
 function App() {
   const [runningTime, setRunningTime] = useState(false);
@@ -20,18 +19,18 @@ function App() {
   }, [runningTime]);
 
   const startStop = () => {
-    setRunningTime((prev)=> !prev)
-  }
+    setRunningTime((prev) => !prev);
+  };
 
   const reset = () => {
-    setRunningTime(false)
-    setStartTime(0)
-  }
+    setRunningTime(false);
+    setStartTime(0);
+  };
 
   const formatTime = (seconds) => {
     const mintues = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
-    return `${mintues}: ${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
+    return `${mintues}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
   };
 
   return (
